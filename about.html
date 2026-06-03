@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — Peninsula Prep</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <style>
+    :root {
+      --dark: #1A1A2E; --dark2: #14142A; --gold: #FFB432; --gold2: #E89E20;
+      --cream: #FFFAF4; --tan: #F0EAE0; --text: #1A1A2E; --muted: #6B6880;
+      --border: #E0D8CC;
+      --font-display: 'Syne', sans-serif; --font-body: 'Instrument Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background-color: var(--cream); color: var(--text); line-height: 1.5; font-size: 16px; overflow-x: hidden; }
+    h1, h2, h3 { font-family: var(--font-display); }
+    
+    .navbar { position: sticky; top: 0; height: 60px; background-color: var(--dark); display: flex; align-items: center; z-index: 1000; }
+    .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: #fff; text-decoration: none; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-link { font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.2s ease; }
+    .nav-link:hover, .nav-link.active { color: #fff; }
+    .nav-btn { background-color: var(--gold); color: var(--dark); padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; font-size: 13.5px; }
+    
+    .page-header { background-color: var(--dark); color: #fff; padding: 6rem 0 4rem 0; text-align: center; }
+    .page-title { font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 1rem; }
+    .page-subtitle { font-size: 18px; color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto; }
+    
+    .container { width: 100%; max-width: 900px; margin: 0 auto; padding: 4rem 1.5rem; }
+    
+    .founder-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 3rem; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .founder-card h3 { font-size: 28px; font-weight: 800; margin-bottom: 0.5rem; color: var(--dark); }
+    .founder-card p { font-size: 15px; color: var(--gold2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+    .founder-bio { font-size: 16px; color: var(--muted); line-height: 1.8; text-align: left; max-width: 700px; margin: 0 auto; }
+    
+    footer { background-color: var(--dark2); padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 4rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-left { font-size: 13px; color: rgba(255, 255, 255, 0.35); }
+    .footer-right { display: flex; gap: 2rem; }
+    .footer-link { font-size: 13px; color: rgba(255, 255, 255, 0.35); text-decoration: none; }
+    .footer-link:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Peninsula<span>Prep</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About me</a>
+        <a href="mission.html" class="nav-link">Mission</a>
+        <a href="register.html" class="nav-link nav-btn">Sign up</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container" style="padding-top: 0; padding-bottom: 0;">
+      <h1 class="page-title">About Me</h1>
+      <p class="page-subtitle">A dedicated peer who understands exactly what it takes to succeed at Carlmont High School.</p>
+    </div>
+  </header>
+
+  <section class="container">
+    <div class="founder-card">
+      <h3>Anay Shah</h3>
+      <p>Founder & Lead Tutor</p>
+      <p class="founder-bio">
+        Hi, I’m Anay! Having successfully conquered Carlmont's rigorous freshman tracks—including Advanced Standing English 1 and advanced math—I know precisely what it takes to thrive here. I started Peninsula Prep with a simple goal: to provide incoming Carlmont students with the targeted academic support that helped me succeed, while giving back to our local community.<br><br>As a solo founder, I am personally invested in every student's success. I bring my direct experience with the curriculum to every session, ensuring that my tutoring isn't just generic advice, but a focused roadmap tailored for the exact classes you will take.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">&copy; 2026 Peninsula Prep | Carlmont High School, Class of 2029</div>
+      <div class="footer-right">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About me</a>
+        <a href="mission.html" class="footer-link">Mission</a>
+        <a href="register.html" class="footer-link">Register</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
