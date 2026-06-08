@@ -68,8 +68,8 @@
     .pillar-tag { font-size: 12px; font-weight: 700; color: var(--gold2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; display: block; }
     
     .stats-bar { background-color: var(--dark2); border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 4rem 0 2rem 0; color: #fff; margin-top: -8rem; padding-top: 10rem; }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
-    .stat-item { display: flex; flex-direction: column; }
+    .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+    .stat-item { display: flex; flex-direction: column; min-width: 150px; }
     .stat-num { font-size: 28px; font-weight: 700; color: var(--gold); }
     .stat-label { font-size: 13px; color: rgba(255, 255, 255, 0.5); margin-top: 0.25rem; }
     
@@ -93,7 +93,7 @@
     .cta-banner p { font-size: 16px; color: rgba(255, 255, 255, 0.65); margin-bottom: 2rem; }
     
     @media (max-width: 850px) { .dual-pillar-grid { grid-template-columns: 1fr; margin-top: 2rem; } .stats-bar { padding-top: 3rem; margin-top: 0; } }
-    @media (max-width: 720px) { .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } .footer-container { flex-direction: column; text-align: center; } }
+    @media (max-width: 720px) { .footer-container { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
@@ -150,10 +150,6 @@
         <div class="stat-item fade-up">
           <span class="stat-num">45 min</span>
           <span class="stat-label">focused sessions</span>
-        </div>
-        <div class="stat-item fade-up">
-          <span class="stat-num">1st</span>
-          <span class="stat-label">County Sci Fair</span>
         </div>
       </div>
     </div>
