@@ -8,61 +8,36 @@
   <style>
     :root { --dark: #1A1A2E; --dark2: #14142A; --gold: #FFB432; --gold2: #E89E20; --cream: #FFFAF4; --tan: #F0EAE0; --text: #1A1A2E; --muted: #6B6880; --border: #E0D8CC; --green: #3BA37A; --font-display: 'Syne', sans-serif; --font-body: 'Instrument Sans', sans-serif; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); background-color: var(--cream); color: var(--text); line-height: 1.5; font-size: 16px; overflow-x: hidden; }
-    h1, h2, h3, .stat-num, .price-amount { font-family: var(--font-display); }
-    .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--gold2); display: block; margin-bottom: 0.5rem; }
-    .section-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-    .section-subtitle { font-size: 16px; color: var(--muted); max-width: 600px; margin-bottom: 3rem; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    section { padding: 6rem 0; } .bg-alt { background-color: var(--tan); }
-    .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-body); font-weight: 600; font-size: 15px; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; transition: transform 0.2s ease, background-color 0.2s ease; cursor: pointer; }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background-color: var(--gold); color: var(--dark); border: none; }
-    .btn-ghost { background-color: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
-    .badge { display: inline-flex; align-items: center; background: rgba(255, 180, 50, 0.15); color: var(--gold); padding: 0.35rem 0.75rem; border-radius: 100px; font-size: 12px; font-weight: 600; margin-bottom: 1.5rem; }
-    .badge-dark { background: rgba(255, 255, 255, 0.1); color: #fff; }
-    .save-badge { background-color: var(--green); color: #fff; font-size: 11px; font-weight: 600; padding: 0.25rem 0.5rem; border-radius: 4px; display: inline-block; }
-    .navbar { position: sticky; top: 0; height: 60px; background-color: var(--dark); display: flex; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    body { font-family: var(--font-body); background-color: var(--cream); color: var(--text); line-height: 1.5; font-size: 16px; }
+    .navbar { height: 60px; background-color: var(--dark); display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
     .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: #fff; text-decoration: none; }
-    .logo span { color: var(--gold); }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-link { font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.65); text-decoration: none; }
-    .nav-link:hover, .nav-link.active { color: #fff; }
-    .nav-btn { background-color: var(--gold); color: var(--dark); padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; font-size: 13.5px; }
-    footer { background-color: var(--dark2); padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-    .footer-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-    .footer-left { font-size: 13px; color: rgba(255, 255, 255, 0.35); }
-    .footer-right { display: flex; gap: 2rem; }
-    .footer-link { font-size: 13px; color: rgba(255, 255, 255, 0.35); text-decoration: none; }
-    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .hero { background-color: var(--dark); color: #fff; padding: 8rem 0 6rem 0; text-align: center; }
-    .hero h1 { font-size: clamp(38px, 5vw, 62px); font-weight: 800; line-height: 1.05; margin-bottom: 1.5rem; }
-    .hero p { font-size: 18px; color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .dual-pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: -3rem; padding: 0 1.5rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
-    .pillar-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 3rem 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .stats-bar { background-color: var(--dark2); padding: 4rem 0 2rem 0; color: #fff; margin-top: -8rem; padding-top: 10rem; }
-    .stats-grid { display: flex; justify-content: space-around; gap: 2rem; }
-    .stat-item { text-align: center; }
-    .stat-num { font-size: 28px; font-weight: 700; color: var(--gold); }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-    .card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; }
-    .card-tag { font-size: 11px; font-weight: 700; color: var(--gold2); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
-    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .price-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem; }
-    .cta-banner { background-color: var(--dark); color: #fff; text-align: center; padding: 5rem 1.5rem; border-radius: 12px; }
+    .logo { font-family: var(--font-display); font-weight: 700; color: #fff; text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-link { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px; }
+    .hero { background: var(--dark); color: #fff; padding: 8rem 0; text-align: center; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .btn { padding: 0.75rem 1.5rem; background: var(--gold); color: var(--dark); border-radius: 6px; text-decoration: none; font-weight: 600; }
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 4rem 0; }
+    .card { background: #fff; border: 1px solid var(--border); padding: 2rem; border-radius: 8px; }
+    footer { background: var(--dark2); color: #fff; padding: 3rem 0; text-align: center; }
   </style>
 </head>
 <body>
-  <nav class="navbar"><div class="nav-container"><a href="index.html" class="logo">Peninsula<span>Prep</span></a><div class="nav-links"><a href="index.html" class="nav-link active">Home</a><a href="about.html" class="nav-link">About me</a><a href="mission.html" class="nav-link">Mission</a><a href="register.html" class="nav-link nav-btn">Sign up</a></div></div></nav>
-  <header class="hero"><div class="container"><h1 class="fade-up">Academic Excellence for Every Grade.</h1><p class="fade-up">Expert peer tutoring for Elementary, Middle, and High School students. Operating on a tip-based model where 100% of profits buy books for local families.</p><div class="fade-up"><a href="register.html" class="btn btn-primary">Book a Session</a></div></div></header>
-  <div class="dual-pillar-grid"><div class="pillar-card fade-up"><h3>A tutor who gets it.</h3><p>Whether you're in elementary school or high school, I provide personalized support to help you master your specific curriculum.</p></div><div class="pillar-card fade-up"><h3>100% of profits donated.</h3><p>Every dollar of profit goes directly to Samaritan House to purchase books for local families in need.</p></div></div>
-  <div class="stats-bar"><div class="container"><div class="stats-grid"><div class="stat-item"><span class="stat-num">100%</span><div class="stat-label">profits donated</div></div><div class="stat-item"><span class="stat-num">K-12</span><div class="stat-label">all grades</div></div><div class="stat-item"><span class="stat-num">45 min</span><div class="stat-label">sessions</div></div></div></div></div>
-  <section class="container"><span class="section-label">Academic Preparation</span><h2 class="section-title">Subjects I cover</h2><div class="card-grid"><div class="card fade-up"><span class="card-tag">Elem / Middle</span><h3>Fundamental Math</h3></div><div class="card fade-up"><span class="card-tag">Elem / Middle</span><h3>Reading & Writing</h3></div><div class="card fade-up"><span class="card-tag">High School</span><h3>Algebra 1 & 2</h3></div><div class="card fade-up"><span class="card-tag">High School</span><h3>Geometry</h3></div><div class="card fade-up"><span class="card-tag">High School</span><h3>English & Writing</h3></div></div></section>
-  <section class="bg-alt"><div class="container"><h2 class="section-title">How it works</h2><div class="price-grid"><div class="price-card"><h3>Suggested Tip</h3><p>$20 - $25 per 45-minute session.</p></div><div class="price-card"><h3>Where it goes</h3><p>Every dollar of profit is converted into books for Samaritan House.</p></div></div></div></section>
-  <section class="container"><div class="cta-banner"><h2>Ready to get started?</h2><a href="register.html" class="btn btn-primary">Sign up for a session</a></div></section>
-  <footer><div class="container footer-container"><div class="footer-left">&copy; 2026 Peninsula Prep</div><div class="footer-right"><a href="index.html" class="footer-link">Home</a><a href="register.html" class="footer-link">Register</a></div></div></footer>
-  <script>const observer = new IntersectionObserver((e) => { e.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); })}); document.querySelectorAll('.fade-up').forEach(i => observer.observe(i));</script>
+  <nav class="navbar"><div class="nav-container"><a href="index.html" class="logo">Peninsula Prep</a><div class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About me</a><a href="mission.html" class="nav-link">Mission</a><a href="register.html" class="nav-link">Sign up</a></div></div></nav>
+  <header class="hero">
+    <div class="container">
+      <h1>Academic Excellence for Every Grade.</h1>
+      <p style="margin: 2rem 0;">Expert peer tutoring for Elementary, Middle, and High School students. 100% of profits help buy books for local families.</p>
+      <a href="register.html" class="btn">Book a Session</a>
+    </div>
+  </header>
+  <section class="container">
+    <div class="card-grid">
+      <div class="card"><h3>Elem / Middle</h3><p>Fundamental Math & Reading</p></div>
+      <div class="card"><h3>High School</h3><p>Algebra, Geometry, English</p></div>
+      <div class="card"><h3>High School</h3><p>Chemistry & Science Research</p></div>
+    </div>
+  </section>
+  <footer><p>&copy; 2026 Peninsula Prep</p></footer>
 </body>
 </html>
