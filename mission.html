@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><title>Mission — Peninsula Prep</title></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission — Peninsula Prep</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <style>
+    :root { --dark: #1A1A2E; --dark2: #14142A; --gold: #FFB432; --cream: #FFFAF4; --border: #E0D8CC; --text: #333333; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Instrument Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.8; }
+    h1, h2 { font-family: 'Syne', sans-serif; color: var(--dark); margin-bottom: 1.5rem; }
+    
+    .navbar { height: 70px; background-color: var(--dark); display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; color: #fff; text-decoration: none; font-size: 24px; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-link { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 15px; font-weight: 500; }
+    .nav-link:hover, .nav-link.active { color: #fff; }
+    
+    .page-header { background: var(--dark); color: #fff; padding: 4rem 2rem; text-align: center; }
+    .page-header h1 { color: #fff; font-size: 3rem; margin: 0; }
+    
+    .content { max-width: 800px; margin: 4rem auto; background: #fff; padding: 4rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+    .content p { font-size: 1.15rem; margin-bottom: 1.5rem; }
+    
+    .highlight-box { background: rgba(255, 180, 50, 0.1); border-left: 4px solid var(--gold); padding: 2rem; margin: 3rem 0; border-radius: 0 8px 8px 0; }
+    
+    footer { background: var(--dark2); color: rgba(255,255,255,0.6); padding: 4rem 2rem; text-align: center; font-size: 14px; margin-top: 4rem; }
+  </style>
+</head>
 <body>
-  <div style="max-width: 800px; margin: 4rem auto;">
-    <h1>My Mission</h1>
-    <p>Peninsula Prep was built on a core belief: Quality academic support shouldn't be a luxury. I provide peer tutoring for students of all ages (K-12), ensuring that younger students build strong foundations while high schoolers gain the edge they need for academic success.</p>
-    <div style="background:#fff; border-left: 4px solid #FFB432; padding: 2rem; margin: 3rem 0;">
-      <p><strong>100% of profits are independently donated to Samaritan House</strong> to support low-income families in the Bay Area.</p>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Peninsula<span>Prep</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="mission.html" class="nav-link active">Mission</a>
+        <a href="register.html" class="nav-link">Sign up</a>
+      </div>
     </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>My Mission</h1>
+  </header>
+
+  <div class="content">
+    <p>Education is the most powerful tool for growth, yet quality academic support is often gated by high costs. Peninsula Prep was founded to make excellent, personalized tutoring accessible to students across all grade levels—from elementary school to high school.</p>
+    
+    <h2>The Tip-Based Model</h2>
+    <p>To ensure this service remains accessible, Peninsula Prep operates entirely as a solo project on a donation-based mission. Instead of requiring a fixed pricing model, I collect suggested tips for my time.</p>
+    <p>Payments are easily accepted via <strong>cash, Zelle, or gift cards</strong>.</p>
+
+    <div class="highlight-box">
+      <p style="margin: 0; font-weight: 600; color: var(--dark);">100% of all proceeds collected act as donations to Samaritan House to purchase books and educational resources for families in need.</p>
+    </div>
+
+    <p><em>*Please note: Peninsula Prep is an independent, student-run initiative and is not formally partnered with Samaritan House. They simply serve as the recipient of the funds we raise together.</em></p>
   </div>
+
+  <footer>&copy; 2026 Peninsula Prep | An Independent Student Initiative</footer>
 </body>
 </html>
