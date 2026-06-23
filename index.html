@@ -6,38 +6,100 @@
   <title>Peninsula Prep — Tutoring & Community</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
   <style>
-    :root { --dark: #1A1A2E; --dark2: #14142A; --gold: #FFB432; --gold2: #E89E20; --cream: #FFFAF4; --tan: #F0EAE0; --text: #1A1A2E; --muted: #6B6880; --border: #E0D8CC; --green: #3BA37A; --font-display: 'Syne', sans-serif; --font-body: 'Instrument Sans', sans-serif; }
+    :root { --dark: #1A1A2E; --dark2: #14142A; --gold: #FFB432; --cream: #FFFAF4; --border: #E0D8CC; --text: #333333; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); background-color: var(--cream); color: var(--text); line-height: 1.5; font-size: 16px; }
-    .navbar { height: 60px; background-color: var(--dark); display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
-    .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: var(--font-display); font-weight: 700; color: #fff; text-decoration: none; }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-link { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px; }
-    .hero { background: var(--dark); color: #fff; padding: 8rem 0; text-align: center; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-    .btn { padding: 0.75rem 1.5rem; background: var(--gold); color: var(--dark); border-radius: 6px; text-decoration: none; font-weight: 600; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 4rem 0; }
-    .card { background: #fff; border: 1px solid var(--border); padding: 2rem; border-radius: 8px; }
-    footer { background: var(--dark2); color: #fff; padding: 3rem 0; text-align: center; }
+    body { font-family: 'Instrument Sans', sans-serif; background-color: var(--cream); color: var(--text); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Syne', sans-serif; color: var(--dark); }
+    
+    /* Navigation */
+    .navbar { height: 70px; background-color: var(--dark); display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Syne', sans-serif; font-weight: 800; color: #fff; text-decoration: none; font-size: 24px; letter-spacing: -0.5px; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-link { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #fff; }
+    .nav-btn { background: var(--gold); color: var(--dark); padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 700; }
+    
+    /* Hero Section */
+    .hero { background: var(--dark); color: #fff; padding: 6rem 2rem; text-align: center; }
+    .hero h1 { color: #fff; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; line-height: 1.1; }
+    .hero p { font-size: 1.25rem; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto 2.5rem auto; }
+    .btn { padding: 1rem 2rem; background: var(--gold); color: var(--dark); border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 1.1rem; display: inline-block; transition: transform 0.2s; }
+    .btn:hover { transform: translateY(-2px); }
+
+    /* Main Content */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+    
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .card { background: #fff; padding: 2.5rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+    .card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+    
+    /* Footer */
+    footer { background: var(--dark2); color: rgba(255,255,255,0.6); padding: 4rem 2rem; text-align: center; font-size: 14px; margin-top: 4rem; }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; } /* Simplified for mobile copy/paste */
+      .hero { padding: 4rem 1.5rem; }
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar"><div class="nav-container"><a href="index.html" class="logo">Peninsula Prep</a><div class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About me</a><a href="mission.html" class="nav-link">Mission</a><a href="register.html" class="nav-link">Sign up</a></div></div></nav>
-  <header class="hero">
-    <div class="container">
-      <h1>Academic Excellence for Every Grade.</h1>
-      <p style="margin: 2rem 0;">Expert peer tutoring for Elementary, Middle, and High School students. 100% of profits help buy books for local families.</p>
-      <a href="register.html" class="btn">Book a Session</a>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Peninsula<span>Prep</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="mission.html" class="nav-link">Mission</a>
+        <a href="register.html" class="nav-link nav-btn">Sign up</a>
+      </div>
     </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Academic Excellence for Every Grade.</h1>
+    <p>Expert peer tutoring for Elementary, Middle, and High School students. Operating on a tip-based model where proceeds buy books for local families in need.</p>
+    <a href="register.html" class="btn">Book a Session</a>
   </header>
+
   <section class="container">
+    <h2 class="section-title">What I Offer</h2>
     <div class="card-grid">
-      <div class="card"><h3>Elem / Middle</h3><p>Fundamental Math & Reading</p></div>
-      <div class="card"><h3>High School</h3><p>Algebra, Geometry, English</p></div>
-      <div class="card"><h3>High School</h3><p>Chemistry & Science Research</p></div>
+      <div class="card">
+        <h3>Elementary / Middle</h3>
+        <p>Building foundational skills in math, reading, and writing to prepare younger students for long-term academic success in high school.</p>
+      </div>
+      <div class="card">
+        <h3>High School Core</h3>
+        <p>Targeted support in subjects like Algebra 2/Trigonometry, Geometry, and Advanced Standing English 1, taught by a peer who just mastered the curriculum.</p>
+      </div>
+      <div class="card">
+        <h3>STEM & Research Focus</h3>
+        <p>Specialized tutoring in Chemistry and independent scientific research methodology for students looking to push their boundaries.</p>
+      </div>
     </div>
   </section>
-  <footer><p>&copy; 2026 Peninsula Prep</p></footer>
+
+  <section class="container" style="padding-top: 0;">
+    <h2 class="section-title">How It Works</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Donation-Based Model</h3>
+        <p>Quality tutoring shouldn't be a luxury. Instead of a fixed pricing model, I accept suggested tips via cash, Zelle, or gift cards following our sessions.</p>
+      </div>
+      <div class="card">
+        <h3>Community Impact</h3>
+        <p>All proceeds collected act as donations directly to Samaritan House to purchase books and educational resources for families in the Bay Area.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      &copy; 2026 Peninsula Prep | An Independent Student Initiative
+    </div>
+  </footer>
 </body>
 </html>
