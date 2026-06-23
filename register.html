@@ -1,139 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Session — Peninsula Prep</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-  <style>
-    :root {
-      --dark: #1A1A2E; --dark2: #14142A; --gold: #FFB432; --gold2: #E89E20;
-      --cream: #FFFAF4; --tan: #F0EAE0; --text: #1A1A2E; --muted: #6B6880;
-      --border: #E0D8CC; --green: #3BA37A;
-      --font-display: 'Syne', sans-serif; --font-body: 'Instrument Sans', sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font-body); background-color: var(--cream); color: var(--text); line-height: 1.5; font-size: 16px; }
-    h1, h2 { font-family: var(--font-display); }
-    
-    .navbar { position: sticky; top: 0; height: 60px; background-color: var(--dark); display: flex; align-items: center; z-index: 1000; }
-    .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: #fff; text-decoration: none; }
-    .logo span { color: var(--gold); }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-link { font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.65); text-decoration: none; transition: color 0.2s ease; }
-    .nav-link:hover, .nav-link.active { color: #fff; }
-    
-    .page-header { background-color: var(--dark); color: #fff; padding: 4rem 0 3rem 0; text-align: center; }
-    .page-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 0.5rem; }
-    
-    .container { width: 100%; max-width: 600px; margin: 0 auto; padding: 4rem 1.5rem; }
-    
-    .form-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-label { display: block; font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 6px; font-family: var(--font-body); font-size: 15px; background-color: var(--cream); transition: border-color 0.2s ease; }
-    .form-control:focus { outline: none; border-color: var(--gold); background-color: #fff; }
-    textarea.form-control { resize: vertical; min-height: 120px; }
-    
-    .btn-submit { width: 100%; background-color: var(--gold); color: var(--dark); border: none; padding: 1rem; border-radius: 6px; font-family: var(--font-body); font-weight: 600; font-size: 16px; cursor: pointer; transition: background-color 0.2s ease; margin-top: 1rem; }
-    .btn-submit:hover { background-color: var(--gold2); }
-    .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
-    
-    .form-note { font-size: 13px; color: var(--muted); text-align: center; margin-top: 1.5rem; line-height: 1.6; }
-    
-    /* Formspree custom styles */
-    .success-message { display: none; background-color: var(--green); color: #fff; padding: 1.5rem; border-radius: 6px; text-align: center; font-weight: 600; margin-bottom: 1.5rem; }
-    [data-fs-success] { display: block; }
-    .error-text { color: #d9534f; font-size: 13px; display: block; margin-top: 0.5rem; }
-    
-    footer { background-color: var(--dark2); padding: 3rem 0; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 4rem; }
-    .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-    .footer-left { font-size: 13px; color: rgba(255, 255, 255, 0.35); }
-    .footer-right { display: flex; gap: 2rem; }
-    .footer-link { font-size: 13px; color: rgba(255, 255, 255, 0.35); text-decoration: none; }
-    .footer-link:hover { color: var(--gold); }
-  </style>
-</head>
+<head><meta charset="UTF-8"><title>Register — Peninsula Prep</title></head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">Peninsula<span>Prep</span></a>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About me</a>
-        <a href="mission.html" class="nav-link">Mission</a>
-        <a href="register.html" class="nav-link active">Sign up</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="page-header">
-    <div class="container" style="padding-top: 0; padding-bottom: 0;">
-      <h1 class="page-title">Book a session</h1>
-    </div>
-  </header>
-
-  <section class="container">
-    <div class="form-card">
+  <div style="max-width: 600px; margin: 4rem auto;">
+    <h1>Book a Session</h1>
+    <form id="register-form">
+      <input type="text" name="Name" placeholder="Student Name" required><br><br>
+      <input type="email" name="Email" placeholder="Parent/Student Email" required><br><br>
       
-      <!-- Formspree Success Message -->
-      <div data-fs-success class="success-message">
-        Thank you! I will review your request and reach out via email shortly to schedule our session.
-      </div>
+      <label>Grade Level</label><br>
+      <select name="Grade" required>
+        <option value="Elementary">Elementary (K-5)</option>
+        <option value="Middle School">Middle School (6-8)</option>
+        <option value="High School">High School (9-12)</option>
+      </select><br><br>
       
-      <form id="register-form">
-        <div class="form-group">
-          <label class="form-label" for="name">Student Name</label>
-          <input type="text" id="name" name="Student Name" class="form-control" required placeholder="First and Last Name" data-fs-field>
-          <span data-fs-error="Student Name" class="error-text"></span>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="email">Parent or Student Email</label>
-          <input type="email" id="email" name="email" class="form-control" required placeholder="you@example.com" data-fs-field>
-          <span data-fs-error="email" class="error-text"></span>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="subject">Subject Needed</label>
-          <select id="subject" name="Subject" class="form-control" required data-fs-field>
-            <option value="" disabled selected>Select a subject...</option>
-            <option value="Algebra 1">Algebra 1</option>
-            <option value="Geometry">Geometry</option>
-            <option value="Algebra 2">Algebra 2</option>
-            <option value="English 1">English 1</option>
-            <option value="Advanced Standing English 1">Advanced Standing English 1</option>
-          </select>
-          <span data-fs-error="Subject" class="error-text"></span>
-        </div>
-        
-        <div class="form-group">
-          <label class="form-label" for="message">Anything I should know?</label>
-          <textarea id="message" name="Notes" class="form-control" placeholder="E.g., struggling with quadratics, needs help with an upcoming essay..." data-fs-field></textarea>
-          <span data-fs-error="Notes" class="error-text"></span>
-        </div>
-        
-        <button type="submit" class="btn-submit" data-fs-submit-btn>Request Session</button>
-        
-        <p class="form-note">I will review your request and reach out via email within 24 hours to schedule our 45-minute block. Tips ($20-$25 suggested) are collected after the session.</p>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-left">&copy; 2026 Peninsula Prep | Carlmont High School</div>
-      <div class="footer-right">
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="about.html" class="footer-link">About me</a>
-        <a href="mission.html" class="footer-link">Mission</a>
-        <a href="register.html" class="footer-link">Register</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Formspree Ajax Initialization -->
+      <input type="text" name="Subject" placeholder="Subject" required><br><br>
+      <button type="submit">Request Session</button>
+    </form>
+  </div>
   <script>
     window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
     formspree('initForm', { formElement: '#register-form', formId: 'mwvjkbvb' });
